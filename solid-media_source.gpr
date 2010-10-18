@@ -1,0 +1,9 @@
+with "../solid";
+
+project Solid.Media_Source is
+   for Source_Files use
+      ("solid-media.ads",
+       "solid-media-mlt.ads",
+       "solid-media-mlt-thin.ads",
+       "solid-media-mlt-thin-property.ads");
+end Solid.Media_Source;
