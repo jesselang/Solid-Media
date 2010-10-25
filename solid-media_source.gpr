@@ -5,5 +5,12 @@ project Solid.Media_Source is
       ("solid-media.ads",
        "solid-media-mlt.ads",
        "solid-media-mlt-thin.ads",
-       "solid-media-mlt-thin-property.ads");
+       "solid-media-mlt-thin-cache.ads",
+       "solid-media-mlt-thin-consumer.ads",
+       "solid-media-mlt-thin-factory.ads",
+       "solid-media-mlt-thin-filter.ads",
+       "solid-media-mlt-thin-producer.ads",
+       "solid-media-mlt-thin-profile.ads",
+       "solid-media-mlt-thin-properties.ads",
+       "solid-media-mlt-thin-transition.ads");
 end Solid.Media_Source;

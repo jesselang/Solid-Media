@@ -44,6 +44,11 @@ package Solid.Media.MLT.Thin is
    type mlt_serializer is access function (object : C.Extensions.void_ptr; length : C.int) return C.Strings.chars_ptr;
    pragma Convention (C, mlt_serializer);
    --~ typedef char *( *mlt_serialiser )( void *, int length );/**< pointer to serialization function */
+
+   -- Opaque pointers that we don't define any operations for.
+   type mlt_cache_item is new C.Extensions.opaque_structure_def_ptr;
+   type mlt_repository is new C.Extensions.opaque_structure_def_ptr;
+   type mlt_service    is new C.Extensions.opaque_structure_def_ptr;
 private
    pragma Linker_Options ("-lmlt");
 end Solid.Media.MLT.Thin;

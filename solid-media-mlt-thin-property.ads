@@ -1,4 +1,4 @@
---with Interfaces.C.Extensions;
+-- Something tells me I didn't need to bind this out, since the same functions appear to exist in mlt_properties.h for the ASM.
 
 package Solid.Media.MLT.Thin.Property is
    type mlt_property is new C.Extensions.opaque_structure_def_ptr;
@@ -45,6 +45,14 @@ package Solid.Media.MLT.Thin.Property is
    function mlt_property_get_string (self : mlt_property) return C.Strings.chars_ptr;
    pragma Import (C, mlt_property_get_string);
 
+   function mlt_property_get_data (self : mlt_property; length : C.int) return C.Extensions.void_ptr;
+   pragma Import (C, mlt_property_get_data);
+
+   procedure mlt_property_close (self : in out mlt_property);
+   pragma Import (C, mlt_property_close);
+
+   procedure mlt_property_pass (this : in out mlt_property; that : in out mlt_property);
+   pragma Import (C, mlt_property_pass);
 
 --~ extern mlt_property mlt_property_init( );
 --~ extern int mlt_property_set_int( mlt_property self, int value );
@@ -60,6 +68,5 @@ package Solid.Media.MLT.Thin.Property is
 --~ extern char *mlt_property_get_string( mlt_property self );
 --~ extern void *mlt_property_get_data( mlt_property self, int *length );
 --~ extern void mlt_property_close( mlt_property self );
-
 --~ extern void mlt_property_pass( mlt_property this, mlt_property that );
 end Solid.Media.MLT.Thin.Property;
