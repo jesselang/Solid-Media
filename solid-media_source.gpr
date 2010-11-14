@@ -8,9 +8,14 @@ project Solid.Media_Source is
        "solid-media-mlt-thin-cache.ads",
        "solid-media-mlt-thin-consumer.ads",
        "solid-media-mlt-thin-factory.ads",
+       "solid-media-mlt-thin-field.ads",
        "solid-media-mlt-thin-filter.ads",
+       "solid-media-mlt-thin-frame.ads",
+       "solid-media-mlt-thin-multitrack.ads",
+       "solid-media-mlt-thin-playlist.ads",
        "solid-media-mlt-thin-producer.ads",
        "solid-media-mlt-thin-profile.ads",
        "solid-media-mlt-thin-properties.ads",
+       "solid-media-mlt-thin-tractor.ads",
        "solid-media-mlt-thin-transition.ads");
 end Solid.Media_Source;
