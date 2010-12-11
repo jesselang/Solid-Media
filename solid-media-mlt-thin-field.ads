@@ -1,24 +1,26 @@
 with Solid.Media.MLT.Thin.Filter;
 with Solid.Media.MLT.Thin.Multitrack;
 with Solid.Media.MLT.Thin.Properties;
-with Solid.Media.MLT.Thin.Tractor;
+-- with Solid.Media.MLT.Thin.Tractor;
 with Solid.Media.MLT.Thin.Transition;
 
 package Solid.Media.MLT.Thin.Field is
    type mlt_field is new C.Extensions.opaque_structure_def_ptr; -- We may need to change this to a record with
                                                                 -- additional information.
 
-   function mlt_field_init return mlt_field;
-   pragma Import (C, mlt_field_init);
+   -- Fields are derived from Tractors.
+   --~ function mlt_field_init return mlt_field;
+   --~ pragma Import (C, mlt_field_init);
 
-   function mlt_field_new (multitrack : Thin.Multitrack.mlt_multitrack; tractor : Thin.Tractor.mlt_tractor) return mlt_field;
-   pragma Import (C, mlt_field_new);
+   --~ function mlt_field_new (multitrack : Thin.Multitrack.mlt_multitrack; tractor : Thin.Tractor.mlt_tractor) return mlt_field;
+   --~ pragma Import (C, mlt_field_new);
 
    function mlt_field_service (self : mlt_field) return mlt_service;
    pragma Import (C, mlt_field_service);
 
-   function mlt_field_tractor (self : mlt_field) return Thin.Tractor.mlt_tractor;
-   pragma Import (C, mlt_field_tractor);
+   -- Need to defeat a circular dependency here.
+   -- function mlt_field_tractor (self : mlt_field) return Thin.Tractor.mlt_tractor;
+   -- pragma Import (C, mlt_field_tractor);
 
    function mlt_field_multitrack (self : mlt_field) return Thin.Multitrack.mlt_multitrack;
    pragma Import (C, mlt_field_multitrack);

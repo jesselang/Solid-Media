@@ -1,4 +1,4 @@
---with Solid.Media.MLT.Thin.Field;
+with Solid.Media.MLT.Thin.Field;
 with Solid.Media.MLT.Thin.Multitrack;
 with Solid.Media.MLT.Thin.Producer;
 
@@ -18,9 +18,8 @@ package Solid.Media.MLT.Thin.Tractor is
    function mlt_tractor_properties (self : mlt_tractor) return Producer.mlt_producer;
    pragma Import (C, mlt_tractor_properties);
 
-   -- I need to defeat a circular dependency here.
-   --~ function mlt_tractor_field (self : mlt_tractor) return Field.mlt_field;
-   --~ pragma Import (C, mlt_tractor_field);
+   function mlt_tractor_field (self : mlt_tractor) return Field.mlt_field;
+   pragma Import (C, mlt_tractor_field);
 
    function mlt_tractor_multitrack (self : mlt_tractor) return Multitrack.mlt_multitrack;
    pragma Import (C, mlt_tractor_multitrack);

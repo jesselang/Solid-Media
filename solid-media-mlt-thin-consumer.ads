@@ -20,6 +20,12 @@ package Solid.Media.MLT.Thin.Consumer is
    function mlt_consumer_start (self : mlt_consumer) return C.int;
    pragma Import (C, mlt_consumer_start);
 
+   function mlt_consumer_stop (self : mlt_consumer) return C.int;
+   pragma Import (C, mlt_consumer_stop);
+
+   function mlt_consumer_is_stopped (self : mlt_consumer) return C.int;
+   pragma Import (C, mlt_consumer_is_stopped);
+
 --~ extern mlt_service mlt_consumer_service( mlt_consumer self );
 --~ extern mlt_properties mlt_consumer_properties( mlt_consumer self );
 --~ extern int mlt_consumer_connect( mlt_consumer self, mlt_service producer );
