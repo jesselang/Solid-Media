@@ -61,6 +61,16 @@ package Solid.Media.MLT.Thin.Properties is
    function mlt_properties_parse (self : mlt_properties; namevalue : in C.Strings.chars_ptr) return C.int;
    pragma Import (C, mlt_properties_parse);
 
+   -- Skipped quite a few here.
+   function mlt_properties_set_data (self       :    mlt_properties;
+                                     name       : in C.Strings.chars_ptr;
+                                     value      :    C.Extensions.void_ptr;
+                                     length     :    C.int;
+                                     destructor :    mlt_destructor;
+                                     serializer :    mlt_serializer)
+   return C.int;
+   pragma Import (C, mlt_properties_set_data);
+
    -- Unfinished.
 
 --~ extern int mlt_properties_init( mlt_properties, void *child );

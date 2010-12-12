@@ -15,8 +15,7 @@ procedure MLT_Driver is
    package C renames Interfaces.C;
    function Convert is new Ada.Unchecked_Conversion (Source => C.Strings.chars_ptr, Target => C.Extensions.void_ptr);
 
-   Repo   : Thin.mlt_repository;
-
+   Repo     : Thin.mlt_repository;
    Profile  : Thin.Profile.mlt_profile;
    Consumer : Thin.Consumer.mlt_consumer;
    Producer : Thin.Producer.mlt_producer;

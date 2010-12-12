@@ -1,6 +1,7 @@
 with Solid.Media.MLT.Thin.Field;
 with Solid.Media.MLT.Thin.Multitrack;
 with Solid.Media.MLT.Thin.Producer;
+with Solid.Media.MLT.Thin.Properties;
 
 package Solid.Media.MLT.Thin.Tractor is
    type mlt_tractor is new C.Extensions.opaque_structure_def_ptr; -- We may need to change this to a record with
@@ -15,7 +16,10 @@ package Solid.Media.MLT.Thin.Tractor is
    function mlt_tractor_service (self : mlt_tractor) return mlt_service;
    pragma Import (C, mlt_tractor_service);
 
-   function mlt_tractor_properties (self : mlt_tractor) return Producer.mlt_producer;
+   function mlt_tractor_producer (self : mlt_tractor) return Producer.mlt_producer;
+   pragma Import (C, mlt_tractor_producer);
+
+   function mlt_tractor_properties (self : mlt_tractor) return Properties.mlt_properties;
    pragma Import (C, mlt_tractor_properties);
 
    function mlt_tractor_field (self : mlt_tractor) return Field.mlt_field;

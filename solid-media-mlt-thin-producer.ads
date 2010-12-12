@@ -33,4 +33,8 @@ package Solid.Media.MLT.Thin.Producer is
 --~ extern mlt_producer mlt_producer_cut_parent( mlt_producer self );
 --~ extern int mlt_producer_optimise( mlt_producer self );
 --~ extern void mlt_producer_close( mlt_producer self );
+
+   -- Callback
+   type transport_callback is access procedure (producer : mlt_producer; value : access C.char);
+   pragma Convention (C, transport_callback);
 end Solid.Media.MLT.Thin.Producer;
